@@ -1,0 +1,29 @@
+<main class="main">
+<div>
+    <h1 class="title">My To-Do List</h1>
+    <p class="text">Task to complete</p>
+    <div>
+    <input class="search-bar" type="text" placeholder="Enter your task here" [(ngModel)]="inputValue">
+    </div>
+    <button class="submit-button" (click)="onClick()">Submit</button>
+    <hr>
+
+    <div class="list">
+        <p class="text">Task</p>
+        <p class="text">Completed</p>
+        <p class="text">Delete</p>
+    </div>
+    <hr>
+    @for (item of items; track item){
+        <div class="item">
+            <p> {{item}} </p>
+            <input type="checkbox">
+            <button>Delete</button>
+        </div>
+    }
+
+
+
+</div>
+</main>
+
