@@ -5,7 +5,7 @@
     <div>
     <input class="search-bar" type="text" placeholder="Enter your task here" [(ngModel)]="inputValue">
     </div>
-    <button class="submit-button" (click)="onClick()">Submit</button>
+    <button class="submit-button" (click)="addItem()">Submit</button>
     <hr>
 
     <div class="list">
@@ -18,7 +18,7 @@
         <div class="item">
             <p> {{item}} </p>
             <input type="checkbox">
-            <button>Delete</button>
+            <button class="delete-button" (click)="deleteItem($index)">Delete</button>
         </div>
     }
 

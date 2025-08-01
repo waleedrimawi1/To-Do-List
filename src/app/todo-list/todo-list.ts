@@ -11,11 +11,15 @@ export class TodoList {
   inputValue = ''
   items:string[] = []
   
-  onClick() {
+  addItem() {
     if(this.items){
       this.items.push(this.inputValue)
       this.inputValue = ''
     }
+  }
+
+  deleteItem(index:number){
+    this.items.splice(index,1)
   }
 }
 
