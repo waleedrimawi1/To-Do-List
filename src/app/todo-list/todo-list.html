@@ -14,10 +14,10 @@
         <p class="text">Delete</p>
     </div>
     <hr>
-    @for (item of items; track item; let i = $index){
+    @for (item of items; track item){
         <app-todo-item 
             [item]="item" 
-            [index]="i" 
+            [index]="$index" 
             (delete)="deleteItem($event)">
         </app-todo-item>
     }

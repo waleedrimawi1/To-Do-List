@@ -1,7 +1,9 @@
 <div class="item">
-    <p [ngClass]="{'active-box': item().isChecked}"> 
+    <p class="task-name" [ngClass]="{'active-box': item().isChecked}"> 
         {{item().text}} 
     </p>
-    <input type="checkbox" [(ngModel)]="item().isChecked">
+    <div class="checkbox-container">
+        <input type="checkbox" [(ngModel)]="item().isChecked">
+    </div>
     <button class="delete-button" (click)="onDelete()">Delete</button>
 </div>
