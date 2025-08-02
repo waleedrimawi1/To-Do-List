@@ -16,8 +16,10 @@
     <hr>
     @for (item of items; track item){
         <div class="item">
-            <p> {{item}} </p>
-            <input type="checkbox">
+            <p [ngClass]="{'active-box': isChecked}"> 
+                {{item}} 
+            </p>
+            <input type="checkbox" [(ngModel)]="isChecked">
             <button class="delete-button" (click)="deleteItem($index)">Delete</button>
         </div>
     }

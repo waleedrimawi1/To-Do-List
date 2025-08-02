@@ -58,3 +58,7 @@
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
 }
+
+.active-box {
+    text-decoration-line: line-through;
+}
