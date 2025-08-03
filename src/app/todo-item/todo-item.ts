@@ -18,8 +18,19 @@ export class TodoItem {
   item = input.required<Task>();
   index = input.required<number>();
   delete = output<number>();
+  showPopup = false
 
   onDelete() {
+    this.showPopup = true;
+  }
+
+  onConfirmDelete() {
     this.delete.emit(this.index());
+    this.showPopup = false;
+
+  }
+
+  onClosePopup() {
+    this.showPopup = false;
   }
 }
