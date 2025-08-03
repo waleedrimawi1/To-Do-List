@@ -18,7 +18,8 @@
         <app-todo-item 
             [item]="item" 
             [index]="$index" 
-            (delete)="deleteItem($event)">
+            (delete)="deleteItem($event)"
+            (checkboxChange)="onCheckboxChange($event)">
         </app-todo-item>
     }
 </div>

@@ -28,4 +28,9 @@ export class TodoList {
   deleteItem(index: number){
     this.todoService.deleteItem(index);
   }
+
+  onCheckboxChange(event: {index: number, isChecked: boolean}) {
+    this.todoService.updateItemCheckbox(event.index, event.isChecked);
+  }
+
 }

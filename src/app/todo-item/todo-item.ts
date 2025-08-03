@@ -18,7 +18,9 @@ export class TodoItem {
   item = input.required<Task>();
   index = input.required<number>();
   delete = output<number>();
+  checkboxChange = output<{index: number, isChecked: boolean}>();
   showPopup = false
+
 
   onDelete() {
     this.showPopup = true;
@@ -33,4 +35,12 @@ export class TodoItem {
   onClosePopup() {
     this.showPopup = false;
   }
+
+  onCheckboxChange() {
+    this.checkboxChange.emit({
+      index: this.index(),
+      isChecked: this.item().isChecked
+    });
+  }
+
 }
