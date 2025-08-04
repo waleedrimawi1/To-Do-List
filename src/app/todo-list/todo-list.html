@@ -2,10 +2,17 @@
 <div>
     <h1 class="title">My To-Do List</h1>
     <p class="text">Task to complete</p>
-    <div>
-    <input class="search-bar" type="text" placeholder="Enter your task here" [(ngModel)]="inputValue">
-    </div>
+
+    <div class="add-task">
+    <input class="add-task-bar" type="text" placeholder="Enter your task here" [(ngModel)]="inputValue">
     <button class="submit-button" (click)="addItem()">Submit</button>
+    </div>
+
+    <p class="text">Search Tasks</p>
+    <div>
+        <input class="search-bar" type="search" [(ngModel)]="searchValue" placeholder="e.g. Study for Exam...">
+    </div>
+
     <hr>
 
     <div class="list">
@@ -14,7 +21,7 @@
         <p class="text">Delete</p>
     </div>
     <hr>
-    @for (item of items; track item){
+    @for (item of filteredTask(); track item){
         <app-todo-item 
             [item]="item" 
             [index]="$index" 

@@ -13,6 +13,7 @@ import { TodoService } from '../todo-service ';
 })
 export class TodoList {
   inputValue = ''
+  searchValue = ''
   items: Task[] = []
   constructor(private todoService: TodoService) {
     this.items = this.todoService.items
@@ -31,6 +32,15 @@ export class TodoList {
 
   onCheckboxChange(event: {index: number, isChecked: boolean}) {
     this.todoService.updateItemCheckbox(event.index, event.isChecked);
+  }
+
+  filteredTask(){
+    if(!this.searchValue){
+      return this.items
+    }
+    return this.items.filter(item =>
+      item.text.toLowerCase().includes(this.searchValue.toLowerCase())
+    );
   }
 
 }
