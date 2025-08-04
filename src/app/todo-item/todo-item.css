@@ -19,6 +19,7 @@
 
 .active-box {
     text-decoration-line: line-through;
+    text-decoration-thickness: 3px;
 }
 
 .task-name {
@@ -62,19 +63,24 @@
 .confirm-button {
     background-color: rgb(139, 46, 46);
     color: white;
-    padding: 8px 16px;
+    width: 60px;
+    height: 30px;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 7px;
+    font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
 }
 
 .cancel-button {
     background-color: rgb(116, 116, 116);
     color: white;
-    padding: 8px 16px;
+    width: 60px;
+    height: 30px;
     border: none;
-    border-radius: 4px;
+    border-radius: 7px;
+    font-size: 12px;
     cursor: pointer;
     font-family: Arial, Helvetica, sans-serif;
+    
 }
