@@ -1,24 +1,24 @@
 <main class="main">
 <div>
-    <h1 class="title">My To-Do List</h1>
-    <p class="text">Task to complete</p>
+    <h1 class="title">{{ CONSTANTS.TITLE }}</h1>
+    <p class="text">{{ CONSTANTS.SUBTITLE }}</p>
 
     <div class="add-task">
-    <input class="add-task-bar" type="text" placeholder="Enter your task here" [(ngModel)]="inputValue">
-    <button class="submit-button" (click)="addItem()">Submit</button>
+    <input class="add-task-bar" type="text" [placeholder]="CONSTANTS.INPUT_PLACEHOLDER" [(ngModel)]="inputValue">
+    <button class="submit-button" (click)="addItem()">{{ CONSTANTS.SUBMIT_BUTTON_TEXT }}</button>
     </div>
 
-    <p class="text">Search Tasks</p>
+    <p class="text">{{ CONSTANTS.SEARCH_LABEL }}</p>
     <div>
-        <input class="search-bar" type="search" [(ngModel)]="searchValue" placeholder="e.g. Study for Exam...">
+        <input class="search-bar" type="search" [(ngModel)]="searchValue" [placeholder]="CONSTANTS.SEARCH_PLACEHOLDER">
     </div>
 
     <hr>
 
     <div class="list">
-        <p class="text">Task</p>
-        <p class="text">Completed</p>
-        <p class="text">Delete</p>
+        <p class="text">{{ CONSTANTS.TASK_HEADER }}</p>
+        <p class="text">{{ CONSTANTS.COMPLETED_HEADER }}</p>
+        <p class="text">{{ CONSTANTS.DELETE_HEADER }}</p>
     </div>
     <hr>
     @for (item of filteredTask(); track item){

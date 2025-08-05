@@ -36,6 +36,15 @@ export class TodoService {
     }
   }
 
+  filterTasks(searchValue: string): Task[] {
+  if (!searchValue) {
+    return this.items;
+  }
+  return this.items.filter(item =>
+    item.text.toLowerCase().includes(searchValue.toLowerCase())
+  );
+}
+
   private saveItemsToCookies(): void {
     const tasksJson = JSON.stringify(this.items);
     this.cookieService.set(this.cookieName, tasksJson, 30);

@@ -1,6 +1,7 @@
 import { Component, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { TODO_CONSTANTS } from '../TODO_CONSTANTS';
 
 export interface Task {
   text: string;
@@ -15,6 +16,8 @@ export interface Task {
   styleUrl: './todo-item.css'
 })
 export class TodoItem {
+  readonly CONSTANTS = TODO_CONSTANTS;
+
   item = input.required<Task>();
   index = input.required<number>();
   delete = output<number>();
